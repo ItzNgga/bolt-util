@@ -4,6 +4,13 @@ const clear = require('clear');
 const figlet = require('figlet');
 const nama = require('./lib/name.js')
 const unlock = require('./lib/unlock.js')
+
+// ____     ___    _       _____     _   _   _____   ___   _
+// | __ )   / _ \  | |     |_   _|   | | | | |_   _| |_ _| | |
+// |  _ \  | | | | | |       | |     | | | |   | |    | |  | |
+// | |_) | | |_| | | |___    | |     | |_| |   | |    | |  | |___
+// |____/   \___/  |_____|   |_|      \___/    |_|   |___| |_____|
+
 clear()
 console.log(
     chalk.green(
@@ -36,6 +43,7 @@ inquirer.prompt([
             var imei = require('node-imei');
             var IMEI= new imei();
             console.log(`\nYour IMEI: ${IMEI.device('Samsung','GalaxyS3')}`)
+            require('child_process').spawnSync("pause", {shell: true, stdio: [0, 1, 2]});
             break
     }
 })
